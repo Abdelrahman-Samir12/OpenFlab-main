@@ -1,5 +1,9 @@
 FROM ruby:3.0.2-alpine
 
+WORKDIR /openflab
+
+COPY . .
+
 RUN apk add --update \
     build-base \
     mariadb-dev \
@@ -9,12 +13,6 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 
 RUN gem install bundler
-
-WORKDIR /app
-
-COPY . /app
-
-COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
