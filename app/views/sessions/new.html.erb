@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= stylesheet_link_tag "logs.css" %>
+
+ </head>
+ <body>
+<div class="container">
+   <h1>Log In</h1>
+<%= form_with url: sign_in_path do |form| %>
+   <%= render partial: "shared/flash" %>
+
+     <div class="mb-3">
+        <%= form.label :email, class: "labels" %>
+        <%= form.text_field :email, class: "form-control", placeholder: "admin@gmail.com" %>
+    </div>
+    
+    <div class="mb-3">
+        <%= form.label :password, class: "labels" %>
+        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+       
+    </div>
+     <%= link_to "Forgot your password ?", password_reset_path , class:"forget_password"%>
+    <div class="mb-4">
+        <%= form.submit "Log In", class: "btn" %>
+    </div>
+    <% end %>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+body{
+    background-image: radial-gradient(circle, #051c21, #294147, #506b71, #7a979e, #a6c6cd);}
+   
+.container{
+margin-top: 110px;
+width: 50%;
+padding: 60px 30px;
+border-radius: 8px;
+color: white;
+background-color:#051c2f;
+}
+.container >h1{
+    font-family: 'Ubuntu';
+    text-align: center;
+    margin-bottom: 20px;
+}
+.form-control{
+    width: 50%;
+    margin: auto;
+}
+.labels
+{
+    margin-left: 155px;
+}
+.forget_password
+{
+    margin-left: 155px;
+    
+}
+.forget_password:hover
+{
+    margin-left: 155px;
+    text-decoration: none;
+    color: #007bff;
+    
+}
+.mb-4{
+    margin-top: 2rem;
+    text-align: center;
+}
+.mb-4 .btn{
+    background-color: #b8cee2;
+    color: #0b375e;
+    border-radius: 4px;
+}
+
+.mb-4 .btn:hover{
+    box-shadow: rgba(86, 86, 94, 0.5) 0px 4px 8px 0px;
+}
+.container-button{
+    margin-top: 2rem;
+    text-align: center;
+}
+.container-button .btn{
+    background-color: #b8cee2;
+    color: #0b375e;
+    border-radius: 4px;
+}
+.container-button .btn:hover{
+    box-shadow: rgba(86, 86, 94, 0.5) 0px 4px 8px 0px;}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="FAEditor">
+		<meta name="author" content="Bill Yu">
+
+		<title>Regular Expression to NFA</title>
+      <%=stylesheet_link_tag('lib_JSAV.css')%>
+    <%=stylesheet_link_tag('lib_odsaAV.css')%>
+    <%=stylesheet_link_tag('lib_odsaStyle.css')%>
+    <%=stylesheet_link_tag('css_customPrompt.css')%>
+    <%=stylesheet_link_tag('css_FA.css')%>
+    <%=stylesheet_link_tag('css_tester.css')%>
+  </head>
+
+  <body>
+    <div id="container" style="margin-top:100px;">
+      <h1 id="editor">Regular Expression to NFA</h1>
+      <div id="jsavcontainer">
+				<button id="nextStep">Do Step</button>
+				<button id="allSteps">Do All</button>
+				<button id="export">Export</button>
+        <p class="jsavoutput jsavline"></p>
+      </div>
+      <button id="layoutButton">Layout</button>
+
+
+
+    <%=javascript_include_tag('lib_jquery.min.js')%>
+    <%=javascript_include_tag('lib_jquery.migrate.min.js')%>
+    <%=javascript_include_tag('lib_jquery.ui.min.js')%>
+    <%=javascript_include_tag('lib_timeme.js')%>
+    <%=javascript_include_tag('lib_paper_core.js')%>
+    <%=javascript_include_tag('lib_jquery.transit.js')%>
+    <%=javascript_include_tag('lib_raphael.js')%>
+    <%=javascript_include_tag('lib_dagre.min.js')%>
+    <%=javascript_include_tag('lib_JSAV.js')%>
+    <%=javascript_include_tag('lib_odsaUtils.js')%>
+    <%=javascript_include_tag('lib_odsaAV.js')%>
+    <%=javascript_include_tag('lib_underscore.js')%>
+    <%=javascript_include_tag('lib_html2canvas.js')%>
+    <%=javascript_include_tag('DataStructures_FLA_serializableGraph.js')%>
+    <%=javascript_include_tag('DataStructures_FLA_Commands.js')%>
+    <%=javascript_include_tag('DataStructures_FLA_FA.js')%>
+   
+    <%=javascript_include_tag('DataStructures_FLA_Discretizer.js')%>
+     <%=javascript_include_tag('DataStructures_FLA_REtoFAController.js')%>
+    <%=javascript_include_tag('CustomPrompt.js')%>
+    <%=javascript_include_tag('REtoFA.js')%>
+
+		
+			
+    </div>
+  </body>
+</html>

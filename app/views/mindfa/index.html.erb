@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DFA minimization</title>
+   
+    <%=stylesheet_link_tag("lib_JSAV.css")%>
+     <%=stylesheet_link_tag("lib_odsaAV.css")%>
+      <%=stylesheet_link_tag("lib_odsaStyle.css")%>
+      <%=stylesheet_link_tag("css_FA.css")%>
+     <%=stylesheet_link_tag("css_customPrompt.css")%>
+     <%=stylesheet_link_tag("css_tester.css")%>
+     <%=stylesheet_link_tag("minimizeDFA.css")%>
+
+		<style>
+			#av {
+      			text-align: center;
+			}
+			p.jsavoutput.jsavline {
+				height: 10px;
+			}
+    		.jsavgraph {
+    			display: inline-block;
+    		}
+    		#reference .jsavedge {
+    			stroke-width: 2;	/*can change to make edges easier to click */
+    		}
+    		#editable {
+    			margin-top: 16px;
+    			margin-bottom: 16px;
+    			width: 45%;
+    			height: 440px;
+
+    			outline: 1px black solid;
+    			border: 10px transparent solid;
+    			display: inline-block;
+    		}
+    		.hide {
+    			display: none;
+    		}
+    		.treework {display: none;}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+		<div id="av">
+			<h1>DFA Minimization</h1>
+			<a class="jsavsettings" href="#">Settings</a>
+			<p style="font-size: 30px">&Sigma;: <span id='alphabet'></span></p>
+      		<button type='button' id="addchildbutton" class='treework'>Add child</button>
+      		<button type='button' id='removetreenodebutton' class='treework'>Remove selected partition</button>
+			<button type="button" id="checkbutton" class="treework">Check nodes</button>
+			<button type="button" id="setterminalbutton" class="split">Set terminal</button>
+			<button type="button" id="autobutton">Auto partition</button>
+			<button type="button" id="donebutton" class="split">Done?</button>
+			<span id='mode'></span>
+			<br>
+			<button type="button" id="movebutton" class="hide">Move states</button>
+			<button type="button" id="edgebutton" class="hide">Add transitions</button>
+			<button type="button" id="hintbutton" class="hide">Hint</button>
+			<button type="button" id="completebutton" class="hide">Complete</button>
+			<button type="button" id="dfadonebutton" class="hide">Done?</button>
+			<button type="button" id="exportbutton" class="hide">Export</button>
+      		<p class="jsavoutput jsavline"></p>
+			<div id="graphs">
+				<div id="reference" class="jsavcanvas"></div>
+				<div id="editable" class="jsavcanvas"></div>
+			</div>
+		</div>
+		<button type="button" id="layoutRef">Layout</button>
+		</div>
+
+ <%=javascript_include_tag('lib_jquery.min.js')%>
+  <%=javascript_include_tag('lib_jquery.migrate.min.js')%>
+  <%=javascript_include_tag('lib_jquery.ui.min.js')%>
+
+  <%=javascript_include_tag('lib_timeme.js')%>
+
+  <%=javascript_include_tag('lib_jquery.transit.js')%>
+  <%=javascript_include_tag('lib_raphael.js')%>
+  <%=javascript_include_tag('lib_dagre.min.js')%>
+  <%=javascript_include_tag('lib_JSAV.js')%>
+
+  <%=javascript_include_tag('lib_odsaUtils.js')%>
+  <%=javascript_include_tag('lib_odsaAV.js')%>
+
+   <%=javascript_include_tag('DataStructures_FLA_serializableGraph.js')%>
+   <%=javascript_include_tag('lib_underscore.js')%>
+   <%=javascript_include_tag('DataStructures_FLA_FA.js')%>
+    <%=javascript_include_tag('CustomPrompt.js')%>
+    <%=javascript_include_tag('minDFA.js')%>
+	
+   	</body>
+</html>
