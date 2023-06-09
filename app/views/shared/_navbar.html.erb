@@ -2,41 +2,51 @@
 <html lang="en">
   <head>
     <%= stylesheet_link_tag "navs.css" %>
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <%= link_to "OpenFLAP", root_path, class: "navbar-brand ps-1" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
- </head>
- <body>
-   <nav class="navbar fixed-top navbar-expand-lg navbar-light">
- 
-  <div class="container-fluid">
-  <%= link_to "OpenFLAP" ,root_path, class: "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarblock" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarblock">
-      <%# <li class="nav-item active">
-         <%= link_to "Home" ,root_path, class: "nav-link" %>
-      <%# </li> %>
-   <ul class="navbar-nav">
-      <% if Current.user %>
-     
-
-          <%= link_to Current.user.email, edit_password_path %> 
-          <%= link_to "Home" ,root_path, class: "nav-link" %>
-          <%= link_to "Editor", "OpenDSA-master/AV/OpenFLAP/OpenFLAP.html", class: "nav-link" %>  
-          <%= link_to "Exercise" ,"Exercise/Exercise-main.html", class: "nav-link" %>       
-          <%= button_to "Logout", logout_path, method: :delete, class: "btn" %>
-         
-            <% else %>
-            <%= link_to "Home" ,root_path, class: "nav-link" %>
-            <%= link_to "Editor", "OpenDSA-master/AV/OpenFLAP/OpenFLAP.html", class: "nav-link mr-3" %>
-        <%# <%= link_to "About" ,about_path, class: "nav-link" %> 
-            <%= link_to "Exercise" ,"Exercise/Exercise-main", class: "nav-link" %>
-            <%= link_to "Log In", sign_in_path, class: "button" %>
-            <%= link_to "Sign Up", sign_up_path, class: "btn" %>
-         
-      <% end %>
-    </ul>
-  </div>
-</nav>
-</body>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav ">
+          <% if Current.user %>
+            <li class="nav-item">
+              <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Editor", "OpenDSA-master/AV/OpenFLAP/OpenFLAP.html", class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Exercise", "Exercise/Exercise-main.html", class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+              <%= button_to "Logout", logout_path, method: :delete, class: "btn" %>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Home", root_path, class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Editor", "OpenDSA-master/AV/OpenFLAP/OpenFLAP.html", class: "nav-link m-1" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Exercise", "Exercise/Exercise-main.html", class: "nav-link m-1" %>
+            </li>
+          <ul class="navbar-nav">
+            <%= link_to "Log In", sign_in_path, class: "btn  button m-1" %>
+            <%= link_to "Sign Up", sign_up_path, class: "btn m-1" %>
+        </ul>
+          <% end %>
+        </ul>
+      </div>
+      </div>
+    </nav>
+  </body>
 </html>

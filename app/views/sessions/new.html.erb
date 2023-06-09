@@ -5,26 +5,30 @@
 
  </head>
  <body>
-<div class="container">
-   <h1>Log In</h1>
-<%= form_with url: sign_in_path do |form| %>
-   <%= render partial: "shared/flash" %>
 
-     <div class="mb-3">
-        <%= form.label :email, class: "labels" %>
-        <%= form.text_field :email, class: "form-control", placeholder: "admin@gmail.com" %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-9 col-sm-12">
+      <%= form_with url: sign_in_path do |form| %>
+        <h1 class="text-center">Log In</h1>
+        <%= render partial: "shared/flash" %>
+
+        <div class="form-group mb-3 mt-4">
+          <%= form.label :email, class: "labels" %>
+          <%= form.text_field :email, class: "form-control", placeholder: "admin@gmail.com" %>
+        </div>
+
+        <div class="form-group mb-3">
+          <%= form.label :password, class: "labels" %>
+          <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+            <%= link_to "Forgot your password ?", password_reset_path , class:"forget_password"%>
+        </div>
+        <div class="form-group">
+          <%= form.submit "Log In", class: "btn button mt-3" %>
+        </div>
+      <% end %>
     </div>
-    
-    <div class="mb-3">
-        <%= form.label :password, class: "labels" %>
-        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
-       
-    </div>
-     <%= link_to "Forgot your password ?", password_reset_path , class:"forget_password"%>
-    <div class="mb-4">
-        <%= form.submit "Log In", class: "btn" %>
-    </div>
-    <% end %>
+  </div>
 </div>
 </body>
 </html>

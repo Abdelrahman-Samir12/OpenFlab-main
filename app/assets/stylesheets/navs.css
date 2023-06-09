@@ -1,18 +1,18 @@
 .navbar{
     background-color:white;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 12px 0px;
-       padding-top: 10px;
+    padding-top: 10px;
 }    
-.navbar-light .navbar-brand{
+.navbar-brand{
       color:#0b375e ;
       font-family: 'Righteous';
       font-size: 24px;
 }
-.navbar-light .navbar-brand:hover{
+.navbar-brand:hover{
     color:#0b375e ;
     font-family: 'Righteous';
 }
-.navbar-light .navbar-nav .nav-link
+.navbar-nav .nav-link
 {
     color:#0b375e;
     font-weight: 500;
@@ -22,14 +22,14 @@
     color:#0b375e;
 }
 .btn{
-margin-right: 8px;
 background-color: #0b375e;
 color: white;
 transition: 0.3s ease-in-out;
+height: 40px;
 }
 .btn:hover
 {
-    color: white;
+    /* color: white; */
     box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 8px 0px;
    
 }
