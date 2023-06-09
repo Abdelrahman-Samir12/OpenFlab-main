@@ -22,19 +22,11 @@ Rails.application.routes.draw do
   delete "logout", to: "sessions#destroy"
   
   root to: "main#index"
-  get "FA", to: "fa#index"
-  get "FAFixer" ,to: "fafixer#index"
-  get "FAtoRE", to: "fatore#index"
-  get "NFAtoDFA", to: "nfatodfa#index"
-  get "GrammarEditor" ,to:"grammareditor#index"
-  get "minDFA",to: "mindfa#index"
-  get "REtoFA",to:"retofa#index"
-  get "PDAEditor",to:"pdaeditor#index"
-  get "TMEditor",to:"tmeditor#index"
-  get "rmenu",to:"rmenu#index"
-  get "multiRun",to:"multirun#index"
+
   get "topics", to: "topics#index"
-  get "exercises",to:"exercise#index"
-  get"FAExTemplate",to:"fa_ex_template#index"
+  get "PDAEditor",to: "topics#pda"
+  get "FA",to: "topics#fa"
+  
+ 
   
 end
