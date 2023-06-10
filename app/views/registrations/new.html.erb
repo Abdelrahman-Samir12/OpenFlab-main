@@ -4,9 +4,9 @@
     <%= stylesheet_link_tag "logs.css" %>
  </head>
  <body>
-<div class="container">
+<div class="container mb-3">
   <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-9 col-sm-12">
+    <div class="col-lg-7 col-md-9 col-sm-12">
 <%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |form| %>
  <h1 class="text-center">Sign Up</h1>
    <% if form.object.errors.any? %>
@@ -17,15 +17,16 @@
     </div>
     <% end %>
 
-    <div class="form-group mb-3 mt-4">
-        <%= form.label :FirstName, class: "labels" %>
-        <%= form.text_field :first_name, class: "form-control"%>
-    </div>
-
-    <div class="form-group mb-3 mt-4">
-        <%= form.label :LastName, class: "labels" %>
-        <%= form.text_field :last_name, class: "form-control" %>
-    </div>
+    <div class="form-group row mb-3 mt-4 g-2">
+  <div class="col">
+    <%= form.label :first_name, class: "labels" %>
+    <%= form.text_field :first_name, class: "form-control" %>
+  </div>
+  <div class="col">
+    <%= form.label :last_name, class: "labels" %>
+    <%= form.text_field :last_name, class: "form-control" %>
+  </div>
+</div>
 
     <div class="form-group mb-3 mt-4">
         <%= form.label :email, class: "labels" %>
@@ -49,6 +50,7 @@
         </div>
 <% end %>
 </div>
-
+</div>
+</div>
 </body>
 </html>
