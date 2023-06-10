@@ -1,15 +1,14 @@
-# email:string 
+# email:string
 # password_digest:string
 #
-#password:string virtual
-#password_confirmation:string virtual
+# password:string virtual
+# password_confirmation:string virtual
 class User < ApplicationRecord
-    has_secure_password
+  has_secure_password
 
-    validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "must be a valid email address"}
-    has_many  :groups
-    has_many  :members
-    has_many  :exercises
-    has_many  :submissions
-
+  validates :email, presence: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'must be a valid email address' }
+  has_many  :groups
+  has_many  :members
+  has_many  :exercises
+  has_many  :submissions
 end

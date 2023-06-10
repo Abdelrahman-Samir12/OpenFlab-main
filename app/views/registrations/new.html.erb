@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <%= stylesheet_link_tag "logs.css" %>
-
  </head>
  <body>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-lg-6 col-md-9 col-sm-12">
 <%= form_with model: @user, url: sign_up_path, data: { turbo: false } do |form| %>
- <h1 class="text-center">Sing Up</h1>
+ <h1 class="text-center">Sign Up</h1>
    <% if form.object.errors.any? %>
     <div class="alert alert-danger">
         <% form.object.errors.full_messages.each do |messages| %>
@@ -17,22 +16,32 @@
         <% end %>
     </div>
     <% end %>
-    
+
+    <div class="form-group mb-3 mt-4">
+        <%= form.label :FirstName, class: "labels" %>
+        <%= form.text_field :first_name, class: "form-control"%>
+    </div>
+
+    <div class="form-group mb-3 mt-4">
+        <%= form.label :LastName, class: "labels" %>
+        <%= form.text_field :last_name, class: "form-control" %>
+    </div>
+
     <div class="form-group mb-3 mt-4">
         <%= form.label :email, class: "labels" %>
-        <%= form.text_field :email, class: "form-control", placeholder: "admin@gmail.com" %>
+        <%= form.text_field :email, class: "form-control" %>
     </div>
     
      <div class="form-group mb-3">
 
         <%= form.label :password , class: "labels"%>
-        <%= form.password_field :password, class: "form-control", placeholder: "password" %>
+        <%= form.password_field :password, class: "form-control"%>
     </div>  
     
             <div class="form-group mb-3">
 
         <%= form.label :password_confirmation ,class: "labels"%>
-        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password" %>
+        <%= form.password_field :password_confirmation, class: "form-control" %>
     </div>
 
       <div class="form-group">

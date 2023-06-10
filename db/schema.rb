@@ -10,52 +10,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_153956) do
-  create_table "exercises", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema[7.0].define(version: 20_230_607_153_956) do
+  create_table 'exercises', force: :cascade do |t|
+    t.integer 'user_id'
+    t.string 'title'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "groups", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'groups', force: :cascade do |t|
+    t.integer 'user_id'
+    t.string 'title'
+    t.text 'description'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "members", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "group_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'members', force: :cascade do |t|
+    t.integer 'user_id'
+    t.integer 'group_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "submissions", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "exercise_id"
-    t.float "grade"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'submissions', force: :cascade do |t|
+    t.integer 'user_id'
+    t.integer 'exercise_id'
+    t.float 'grade'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "tasks", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "exercise_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'tasks', force: :cascade do |t|
+    t.integer 'group_id'
+    t.integer 'exercise_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", null: false
-    t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.boolean "can_add_exercise"
+  create_table 'users', force: :cascade do |t|
+    t.string 'email', null: false
+    t.string 'password_digest'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'first_name'
+    t.string 'last_name'
+    t.boolean 'can_add_exercise'
   end
-
 end

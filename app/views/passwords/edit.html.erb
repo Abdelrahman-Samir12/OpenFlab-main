@@ -1,3 +1,10 @@
+<h1><%= Current.user.email %></h1>
+<br>
+<h1><%= Current.user.first_name + ' ' +Current.user.last_name %></h1>
+<br>
+
+
+
 <h1>Edit password</h1>
 
 <%= form_with model: Current.user, url: edit_password_path, data: { turbo: false } do |form| %>
