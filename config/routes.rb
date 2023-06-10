@@ -29,7 +29,5 @@ Rails.application.routes.draw do
   resources :groups do
     resources :members, only: %i[create destroy]
   end
-
-  get '/groups/new', to: 'groups#new', as: 'new_group'
-  get '/groups', to: 'groups#index', as: 'groups'
+  
 end
