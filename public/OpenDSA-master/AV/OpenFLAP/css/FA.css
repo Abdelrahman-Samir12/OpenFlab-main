@@ -1,3 +1,4 @@
+
 #av {
 	width: 100%;
 	position: relative;
@@ -50,7 +51,7 @@
 	height: 500px;
 }
 .jsavgraph {
-	outline: 1px black solid;
+	outline: px black solid;
 	border: 10px transparent solid;
 }
 .jsavnode {
@@ -110,3 +111,9 @@
     border: 1px solid black;
     background-color: white;
 }
+
+
+
+  
+ 
+ 
