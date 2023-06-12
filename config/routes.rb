@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   get 'topics', to: 'topics#index'
   get 'PDAEditor', to: 'topics#pda'
   get 'FA', to: 'topics#fa'
-
+  resources :exercises
+  
   resources :groups do
     resources :members, only: %i[create destroy]
   end

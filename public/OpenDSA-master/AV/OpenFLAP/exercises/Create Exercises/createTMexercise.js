@@ -7,10 +7,15 @@
 		problemCount = 1,
 		resultCount = 1,
 		editGraphButtons = [],
-		uploadGraphButtons = [];
+		uploadGraphButtons = [],
+		exercise_type="TM",
+		exerciseName="";
 
 	function generatejson()
 	{
+		var exerciseNameElement = document.getElementById('exerciseName');
+         exerciseName = exerciseNameElement.value;
+		 console.log(exerciseName);
 		problems = [];
 		$("fieldset").each(problemInfo);
 		var json = JSON.stringify(problems);
@@ -21,6 +26,31 @@
 		} else {
 			fileName = "tests.json";
 		}
+
+		let my_data = {
+			type: exercise_type,
+			name: exerciseName,
+			problems: problems
+
+		  };
+
+        $.ajax({
+			url: '/exercises',
+			type: 'POST',
+			dataType: 'json',
+			data:JSON.stringify(my_data),
+			beforeSend: function(xhr) {
+			  xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+			},
+			success: function(response) {
+			  // Handle the response from the server
+			  console.log(response);
+			},
+			error: function(xhr, status, error) {
+			  // Handle errors
+			  console.log(xhr.responseText);
+			}
+		  });
 
 		$("#btn-save");
 		$('#download').html('<a href="data:' + downloadData + '" target="_blank" download="' + fileName + '">Download Exercises JSON File</a>');
@@ -337,6 +367,11 @@
     }
     
     function onTMChange() {
+		
+		if (document.getElementById('transducer').checked)
+		exercise_type="TM";
+		console.log(exercise_type);
+		
         document.getElementById("transducerOne").style.display = "none";
         document.getElementById("transducerTwo").style.display = "block";
         document.getElementById("acceptReject").style.display = "none";
@@ -344,6 +379,28 @@
 
     
     function onTMReset() {
+	    
+		if (document.getElementById('resetTransducer').checked)
+		exercise_type="TM";
+		else if (document.getElementById('CFL').checked)
+		exercise_type="CFL";
+		else if (document.getElementById('FA').checked)
+		exercise_type="FA";
+
+		else if (document.getElementById('grammar').checked)
+		exercise_type="grammar";
+		else if (document.getElementById('PDA').checked)
+		exercise_type="PDA";
+
+		else if (document.getElementById('Regular').checked)
+		exercise_type="Regular";
+
+
+
+
+		console.log(exercise_type);
+
+
         document.getElementById("transducerOne").style.display = "block";
         document.getElementById("transducerTwo").style.display = "none";
         document.getElementById("acceptReject").style.display = "block";
@@ -425,7 +482,14 @@
 
 
     $("#transducer").click(onTMChange);
-    $(".resetTransducer").click(onTMReset);
+    $("#resetTransducer").click(onTMReset);
+	$("#CFL").click(onTMReset);
+	$("#FA").click(onTMReset);
+	$("#grammar").click(onTMReset);
+	$("#PDA").click(onTMReset);
+	$("#Regular").click(onTMReset);
+	
+
 
 	$("#getjson").click(generatejson);
 	$("#addExercise").click(addProblem);
