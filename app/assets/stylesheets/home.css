@@ -9,7 +9,7 @@ body{
     height: 500px; /* set a default height for the background image */
     position: relative;
   }
-  
+
   .bg-image h2 {
     position: absolute;
     top: 10%;
